@@ -5,11 +5,11 @@ public class ProgramClass {
         // bubble sort
 
         for (int a = 0; a < inputArray.length; a++) {
-            for (int i = 0; i < inputArray.length - 1; i++) {
-                if (inputArray[i] > inputArray[i + 1]) {
-                    int valueCache = inputArray[i + 1];
-                    inputArray[i + 1] = inputArray[i];
-                    inputArray[i] = valueCache;
+            for (int b = 0; b < inputArray.length - 1; b++) {
+                if (inputArray[b] > inputArray[b + 1]) {
+                    int valueCache = inputArray[b + 1];
+                    inputArray[b + 1] = inputArray[b];
+                    inputArray[b] = valueCache;
                 }
             }
         }
