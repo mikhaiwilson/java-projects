@@ -78,8 +78,7 @@ public class ProgramClass {
         int[] array2 = {14, 12, 10, 7, 5, 4, 2, 12931923, 2, 2, 1423012301, 129, 1238};
         program2(array2);
 
-        int[] array3 = {5, 4, 3};
-        // 4, 5, 3
+        int[] array3 = {5, 4, 3, 9, 129, 20302, 1123, 14, 999, 777};
         program3(array3);
     }
 }
