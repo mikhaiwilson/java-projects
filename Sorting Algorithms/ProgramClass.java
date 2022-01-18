@@ -24,9 +24,9 @@ public class ProgramClass {
         int lowestIndex = 0;
 
         for (int a = 0; a < inputArray.length; a++) {
-            for (int i = unsortedIndexStart; i < inputArray.length; i++) {
-                if (inputArray[i] < inputArray[lowestIndex]) {
-                    lowestIndex = i;
+            for (int b = unsortedIndexStart; b < inputArray.length; b++) {
+                if (inputArray[b] < inputArray[lowestIndex]) {
+                    lowestIndex = b;
                 }
             }
 
@@ -44,6 +44,27 @@ public class ProgramClass {
 
     public static void program3(int[] inputArray) {
         // insertion sort
+       
+        for (int currentPointer = 1; currentPointer < inputArray.length; currentPointer++) {
+            // find value to the left that is smaller
+            int insertIndex = -1;
+            for (int possibleIndex = currentPointer - 1; possibleIndex >= 0; possibleIndex--) {
+                if (inputArray[currentPointer] < inputArray[possibleIndex]) {
+                    insertIndex = possibleIndex;
+                }
+            }
+            
+            if (insertIndex > -1) { // replacing everything beforehand
+                for (int i = currentPointer - 1; i >= insertIndex; i--) { 
+                    int previousIndexCache = inputArray[i];
+                   
+                    inputArray[i] = inputArray[i + 1];
+                    inputArray[i + 1] = previousIndexCache;
+                }
+            }
+        }
+
+        printArray(inputArray);
     }
 
     public static void printArray(int[] inputArray) {
@@ -51,10 +72,14 @@ public class ProgramClass {
 	}
 
     public static void main(String[] args) {
-        // int[] array1 = {4, 451, 2, 123, 511, 120}; 
-        // program1(array1);
+        int[] array1 = {4, 451, 2, 123, 511, 120}; 
+        program1(array1);
 
-        int[] array2 = {14, 12, 10, 7, 5, 4, 2};
+        int[] array2 = {14, 12, 10, 7, 5, 4, 2, 12931923, 2, 2, 1423012301, 129, 1238};
         program2(array2);
+
+        int[] array3 = {5, 4, 3};
+        // 4, 5, 3
+        program3(array3);
     }
 }
