@@ -18,7 +18,28 @@ public class ProgramClass {
     }
 
     public static void program2(String[] inputArray) {
+        // selection sort
 
+        int unsortedIndexStart = 0;
+        int lowestIndex = 0;
+
+        for (int a = 0; a < inputArray.length; a++) {
+            for (int b = unsortedIndexStart; b < inputArray.length; b++) {
+                if (inputArray[b].compareTo(inputArray[lowestIndex]) > 0) {
+                    lowestIndex = b;
+                }
+            }
+
+            String unsortedIndexStartCache = inputArray[unsortedIndexStart];
+
+            inputArray[unsortedIndexStart] = inputArray[lowestIndex];
+            inputArray[lowestIndex] = unsortedIndexStartCache;
+
+            unsortedIndexStart = unsortedIndexStart + 1;
+            lowestIndex = unsortedIndexStart;
+        }
+
+        printArray(inputArray);
     }
 
     public static void printArray(String[] inputArray) {
@@ -28,5 +49,8 @@ public class ProgramClass {
     public static void main(String[] args) {
         String[] array1 = {"Zed", "Yield", "Chicklen", "Noob", "Xavier"}; 
         program1(array1);
+
+        String[] array2 = {"Zed", "Yield", "Chicklen", "Noob", "Xavier"}; 
+        program2(array2);
     }
 }
