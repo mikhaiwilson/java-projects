@@ -2,6 +2,8 @@ import java.util.Arrays;
 
 public class ProgramClass {
     public static void program1(String[] inputArray) {
+        // bubble sort
+        
         for (int a = 0; a < inputArray.length; a++) {
             for (int b = 0; b < inputArray.length - 1; b++) {
                 if (inputArray[b].compareTo(inputArray[b + 1]) > 0) {
