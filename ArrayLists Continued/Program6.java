@@ -50,6 +50,15 @@ public class Program6 {
     }
 
     public static void problem3(ArrayList<Integer> inputArray) {
-        
+        int evenNum = 1;
+        int oddNum = 0;
+
+        for (Integer number : inputArray) {
+            if ((number % 2) == 0) {
+                evenNum = (evenNum * number);
+            } else {
+                oddNum = (oddNum + number);
+            }
+        }
     }
 }
