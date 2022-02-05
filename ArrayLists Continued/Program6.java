@@ -1,4 +1,3 @@
-import java.lang.Character.Subset;
 import java.util.ArrayList;
 
 public class Program6 {
@@ -20,6 +19,11 @@ public class Program6 {
 
         System.out.println("before: " + array);
         problem2(array);
+
+        System.out.println();
+
+        System.out.println("before: " + array);
+        problem3(array);
     }
 
     public static void problem1(ArrayList<Integer> inputArray) {
@@ -60,5 +64,8 @@ public class Program6 {
                 oddNum = (oddNum + number);
             }
         }
+
+        System.out.println("The product of all even numbers in the arraylist: " + evenNum);
+        System.out.println("THe sum of all odd numbers in the arraylist: " + oddNum);
     }
 }
