@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Program5 {
+public class StudentClass {
     public static void main(String[] args) { 
         //step 1
         ArrayList<String> myList = new ArrayList<String>();
