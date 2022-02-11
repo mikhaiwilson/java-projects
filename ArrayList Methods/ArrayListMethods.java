@@ -1,29 +1,43 @@
 import java.util.ArrayList;
 
-public class ProgramClass {
+public class ArrayListMethods {
     // make sure that main class is first
     // make sure that printing is done in the main method
 
     public static void main(String[] args) {
-        ArrayList<Integer> array = new ArrayList<>();
+        // ArrayList<Integer> array = new ArrayList<>();
 
-        array.add(2);
-        array.add(2);
-        array.add(2);
-        array.add(2);
-        array.add(3);
-        array.add(3);
-        array.add(4);
-        array.add(4);
-        array.add(5);
+        // array.add(2);
+        // array.add(2);
+        // array.add(2);
+        // array.add(2);
+        // array.add(3);
+        // array.add(3);
+        // array.add(4);
+        // array.add(4);
+        // array.add(5);
  
-        System.out.println(array);
-        program2(array);
-        System.out.println(array);
+        // System.out.println(array);
+        // program2(array);
+        // System.out.println(array);
 
+        int program1Testing[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
+
+        System.out.println(program1Testing);
+        program1(program1Testing);
+        System.out.println(program1Testing);
+        
     } 
 
-    public static void program1(Integer[] inputArray) {
+    public static void printArray(int[] inputArray) {
+        System.out.print("[");
+        for (int index = 0; index < inputArray.length; index++) {
+            System.out.print(inputArray[index] + ", ");
+        }
+        System.out.print("]");
+    }
+
+    public static void program1(int[] inputArray) {
         int alreadyExists[] = new int [inputArray.length];
         ArrayList<Integer> preReturnArrayList = new ArrayList<>();
 
@@ -34,7 +48,7 @@ public class ProgramClass {
             }  
         }
 
-        Integer returnArray[] = new Integer [preReturnArrayList.size()];
+        int returnArray[] = new int [preReturnArrayList.size()];
 
         for (int index = 0; index < returnArray.length; index++) {
             returnArray[index] = preReturnArrayList.get(index);
