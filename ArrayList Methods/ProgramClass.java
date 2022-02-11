@@ -18,12 +18,12 @@ public class ProgramClass {
         array.add(5);
  
         System.out.println(array);
-        program1(array);
+        program2(array);
         System.out.println(array);
 
     } 
 
-    public static void program1(ArrayList<Integer> inputArray) {
+    public static void program2(ArrayList<Integer> inputArray) {
         int alreadyExists[] = new int [inputArray.size()];
 
         for (int index = 0; index < inputArray.size(); index++) {
