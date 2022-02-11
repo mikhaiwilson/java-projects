@@ -5,26 +5,28 @@ public class ArrayListMethods {
     // make sure that printing is done in the main method
 
     public static void main(String[] args) {
-        // ArrayList<Integer> array = new ArrayList<>();
+        System.out.println("\nprogram 1:");
+        int array[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
+        printArray(array);
+        array = program1(array);
+        printArray(array);
 
-        // array.add(2);
-        // array.add(2);
-        // array.add(2);
-        // array.add(2);
-        // array.add(3);
-        // array.add(3);
-        // array.add(4);
-        // array.add(4);
-        // array.add(5);
+        System.out.println("\nprogram 2:");
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        arrayList.add(2);
+        arrayList.add(2);
+        arrayList.add(2);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(4);
+        arrayList.add(5);
  
-        // System.out.println(array);
-        // program2(array);
-        // System.out.println(array);
-
-        int program1Testing[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
-        printArray(program1Testing);
-        program1Testing = program1(program1Testing);
-        printArray(program1Testing);
+        System.out.println(arrayList);
+        program2(arrayList);
+        System.out.println(arrayList);
         
     } 
 
