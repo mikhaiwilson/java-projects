@@ -75,4 +75,12 @@ public class ArrayListMethods {
             alreadyExists[inputArray.get(index)] = -1; 
         }
     }
+
+    public static void program3() {
+
+    }
+
+    public static void program4() {
+        
+    }
 }
