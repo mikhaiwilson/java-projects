@@ -23,6 +23,26 @@ public class ProgramClass {
 
     } 
 
+    public static void program1(Integer[] inputArray) {
+        int alreadyExists[] = new int [inputArray.length];
+        ArrayList<Integer> preReturnArrayList = new ArrayList<>();
+
+        for (int index = 0; index < inputArray.length; index++) {
+            if (!(alreadyExists[inputArray[index]] == -1)) {
+                alreadyExists[inputArray[index]] = -1; 
+                preReturnArrayList.add(inputArray[index]);
+            }  
+        }
+
+        Integer returnArray[] = new Integer [preReturnArrayList.size()];
+
+        for (int index = 0; index < returnArray.length; index++) {
+            returnArray[index] = preReturnArrayList.get(index);
+        } 
+
+        inputArray = returnArray;
+    }
+
     public static void program2(ArrayList<Integer> inputArray) {
         int alreadyExists[] = new int [inputArray.size()];
 
