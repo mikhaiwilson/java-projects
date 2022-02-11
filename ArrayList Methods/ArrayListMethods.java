@@ -23,9 +23,10 @@ public class ArrayListMethods {
 
         int program1Testing[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
 
-        System.out.println(program1Testing);
-        program1(program1Testing);
-        System.out.println(program1Testing);
+        
+        program1Testing = program1(program1Testing);
+        
+        printArray(program1Testing);
         
     } 
 
@@ -34,10 +35,10 @@ public class ArrayListMethods {
         for (int index = 0; index < inputArray.length; index++) {
             System.out.print(inputArray[index] + ", ");
         }
-        System.out.print("]");
+        System.out.print("]\n");
     }
 
-    public static void program1(int[] inputArray) {
+    public static int[] program1(int[] inputArray) {
         int alreadyExists[] = new int [inputArray.length];
         ArrayList<Integer> preReturnArrayList = new ArrayList<>();
 
@@ -54,7 +55,7 @@ public class ArrayListMethods {
             returnArray[index] = preReturnArrayList.get(index);
         } 
 
-        inputArray = returnArray;
+        return returnArray;
     }
 
     public static void program2(ArrayList<Integer> inputArray) {
