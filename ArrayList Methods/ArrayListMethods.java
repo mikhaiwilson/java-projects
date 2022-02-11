@@ -31,7 +31,12 @@ public class ArrayListMethods {
     public static void printArray(int[] inputArray) {
         System.out.print("[");
         for (int index = 0; index < inputArray.length; index++) {
-            System.out.print(inputArray[index] + ", ");
+            if (index == (inputArray.length - 1)) {
+                System.out.print(inputArray[index]);
+            } else {
+                System.out.print(inputArray[index] + ", ");
+            }
+            
         }
         System.out.print("]\n");
     }
