@@ -24,17 +24,12 @@ public class ProgramClass {
     } 
 
     public static void program1(ArrayList<Integer> inputArray) {
-
         int alreadyExists[] = new int [inputArray.size()];
 
         for (int index = 0; index < inputArray.size(); index++) {
-            
             if (alreadyExists[ inputArray.get(index) ] == -1) {
-
                 inputArray.remove(index);
-
                 index--;
-
             }
             
             alreadyExists[inputArray.get(index)] = -1; 
