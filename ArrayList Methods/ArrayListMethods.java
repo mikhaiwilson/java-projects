@@ -22,10 +22,8 @@ public class ArrayListMethods {
         // System.out.println(array);
 
         int program1Testing[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
-
-        
+        printArray(program1Testing);
         program1Testing = program1(program1Testing);
-        
         printArray(program1Testing);
         
     } 
