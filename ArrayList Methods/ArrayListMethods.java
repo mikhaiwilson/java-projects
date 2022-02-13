@@ -5,11 +5,11 @@ public class ArrayListMethods {
     // make sure that printing is done in the main method
 
     public static void main(String[] args) {
-        System.out.println("program 1:");
-        int array[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
-        printArray(array);
-        array = program1(array);
-        printArray(array);
+        // System.out.println("program 1:");
+        // int array[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
+        // printArray(array);
+        // array = program1(array);
+        // printArray(array);
 
         System.out.println("\nprogram 2:");
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -43,24 +43,19 @@ public class ArrayListMethods {
         System.out.print("]\n");
     }
 
-    public static int[] program1(int[] inputArray) {
+    public static void program1(Integer[] inputArray) {
         int alreadyExists[] = new int [inputArray.length];
-        ArrayList<Integer> preReturnArrayList = new ArrayList<>();
+        // ArrayList<Integer> preReturnArrayList = new ArrayList<>();
 
         for (int index = 0; index < inputArray.length; index++) {
             if (!(alreadyExists[inputArray[index]] == -1)) {
                 alreadyExists[inputArray[index]] = -1; 
-                preReturnArrayList.add(inputArray[index]);
-            }  
+            } else {
+                inputArray[index] = null;
+
+                // move everything in list down by one?
+            }   
         }
-
-        int returnArray[] = new int [preReturnArrayList.size()];
-
-        for (int index = 0; index < returnArray.length; index++) {
-            returnArray[index] = preReturnArrayList.get(index);
-        } 
-
-        return returnArray;
     }
 
     public static void program2(ArrayList<Integer> inputArray) {
