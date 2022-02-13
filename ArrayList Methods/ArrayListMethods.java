@@ -5,11 +5,11 @@ public class ArrayListMethods {
     // make sure that printing is done in the main method
 
     public static void main(String[] args) {
-        // System.out.println("program 1:");
-        // int array[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
-        // printArray(array);
-        // array = program1(array);
-        // printArray(array);
+        System.out.println("program 1:");
+        Integer array[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
+        printArray(array);
+        program1(array);
+        printArray(array);
 
         System.out.println("\nprogram 2:");
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -30,15 +30,12 @@ public class ArrayListMethods {
         
     } 
 
-    public static void printArray(int[] inputArray) {
+    public static void printArray(Integer[] inputArray) {
         System.out.print("[");
         for (int index = 0; index < inputArray.length; index++) {
-            if (index == (inputArray.length - 1)) {
-                System.out.print(inputArray[index]);
-            } else {
+            if (!(inputArray[index] == null)) {
                 System.out.print(inputArray[index] + ", ");
-            }
-            
+            } 
         }
         System.out.print("]\n");
     }
