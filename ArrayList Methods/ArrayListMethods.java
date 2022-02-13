@@ -6,7 +6,7 @@ public class ArrayListMethods {
 
     public static void main(String[] args) {
         System.out.println("program 1:");
-        Integer array[] = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
+        Integer[] array = {1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7};
         printArray(array);
         program1(array);
         printArray(array);
@@ -41,16 +41,13 @@ public class ArrayListMethods {
     }
 
     public static void program1(Integer[] inputArray) {
-        int alreadyExists[] = new int [inputArray.length];
-        // ArrayList<Integer> preReturnArrayList = new ArrayList<>();
+        int[] alreadyExists = new int [inputArray.length];
 
         for (int index = 0; index < inputArray.length; index++) {
             if (!(alreadyExists[inputArray[index]] == -1)) {
                 alreadyExists[inputArray[index]] = -1; 
             } else {
                 inputArray[index] = null;
-
-                // move everything in list down by one?
             }   
         }
     }
@@ -68,11 +65,11 @@ public class ArrayListMethods {
         }
     }
 
-    public static void program3() {
-
+    public static void program3(String nameString, String[] firstNameArray, String[] lastNameArray) {
+        
     }
 
-    public static void program4() {
+    public static void program4(String nameString, ArrayList<String> firstNameArray, ArrayList<String> lastNameArray) {
         
     }
 }
