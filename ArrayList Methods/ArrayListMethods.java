@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
-import javax.xml.stream.events.Namespace;
-
 public class ArrayListMethods {
-    // make sure that main class is first
-    // make sure that printing is done in the main method
+    // this was not fun
 
     public static void main(String[] args) {
         System.out.println("program 1:");
@@ -36,7 +33,14 @@ public class ArrayListMethods {
         // --------------------------------------------------------------------------- //
         // --------------------------------------------------------------------------- //
         
+        System.out.println("\nprogram 3:");
+        String nameString1 = "Wonda Wilkerson Chicken Mcdoodle Mikhai Wilson James Lebron Micheal Johnson Carl Madegascar Lucas Gale Micheal Chor";
+        String[] firstNameArray = new String[8];
+        String[] lastNameArray = new String[8];
+        program3(nameString1, firstNameArray, lastNameArray);
 
+        printArray(firstNameArray);
+        printArray(lastNameArray);
 
         // --------------------------------------------------------------------------- //
         // --------------------------------------------------------------------------- //
@@ -52,6 +56,16 @@ public class ArrayListMethods {
     } 
 
     public static void printArray(Integer[] inputArray) {
+        System.out.print("[");
+        for (int index = 0; index < inputArray.length; index++) {
+            if (!(inputArray[index] == null)) {
+                System.out.print(inputArray[index] + ", ");
+            } 
+        }
+        System.out.print("]\n");
+    }
+
+    public static void printArray(String[] inputArray) {
         System.out.print("[");
         for (int index = 0; index < inputArray.length; index++) {
             if (!(inputArray[index] == null)) {
@@ -87,7 +101,26 @@ public class ArrayListMethods {
     }
 
     public static void program3(String nameString, String[] firstNameArray, String[] lastNameArray) {
-        
+        int previous = 0;
+        int count = 1;
+        int firstNameIndex = 0;
+        int lastNameIndex = 0;
+
+        for (int i = nameString.indexOf(" "); i != -1; i = nameString.indexOf(" ", i + 1)) {
+            if (count % 2 == 0) {
+                lastNameArray[lastNameIndex] = nameString.substring(previous + 1, i);
+                lastNameIndex++;
+                count++;
+                previous = i;
+            } else {
+                firstNameArray[firstNameIndex] = (nameString.substring(previous, i));
+                firstNameIndex++;
+                count++;
+                previous = i;
+            }
+        }
+
+        lastNameArray[lastNameArray.length - 1] = nameString.substring(previous, nameString.length());
     }
 
     public static void program4(String nameString, ArrayList<String> firstNameArrayList, ArrayList<String> lastNameArrayList) {
