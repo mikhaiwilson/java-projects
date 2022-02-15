@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.xml.stream.events.Namespace;
+
 public class ArrayListMethods {
     // make sure that main class is first
     // make sure that printing is done in the main method
@@ -40,7 +42,7 @@ public class ArrayListMethods {
         // --------------------------------------------------------------------------- //
 
         System.out.println("\nprogram 4:");
-        String nameString = "Wonda Wilkerson Chicken Mcdoodle";
+        String nameString = "Wonda Wilkerson Chicken Mcdoodle Mikhai Wilson James Lebron Micheal Johnson Carl Madegascar Lucas Gale Micheal Chor";
         ArrayList<String> firstNameArrayList = new ArrayList<>();
         ArrayList<String> lastNameArrayList = new ArrayList<>();
         program4(nameString, firstNameArrayList, lastNameArrayList);
@@ -89,25 +91,21 @@ public class ArrayListMethods {
     }
 
     public static void program4(String nameString, ArrayList<String> firstNameArrayList, ArrayList<String> lastNameArrayList) {
-        int numberOfWords = 1;
+        int previous = 0;
+        int count = 1;
 
-        //figure out how many words are there
-        for (int letterIndex = 0; letterIndex < nameString.length(); letterIndex++) {
-            if (nameString.substring(letterIndex, letterIndex + 1).isBlank()) {
-                numberOfWords = numberOfWords + 1;
-            }   
+        for (int i = nameString.indexOf(" "); i != -1; i = nameString.indexOf(" ", i + 1)) {
+            if (count % 2 == 0) {
+                lastNameArrayList.add(nameString.substring(previous + 1, i));
+                count++;
+                previous = i;
+            } else {
+                firstNameArrayList.add(nameString.substring(previous, i));
+                count++;
+                previous = i;
+            }
         }
 
-        for (int letterIndex = 0; letterIndex <= numberOfWords; letterIndex++) {
-            String firstName = nameString.substring(0, nameString.indexOf(" "));
-            firstNameArrayList.add(firstName);
-            nameString = nameString.substring(nameString.indexOf(" "));
-
-            System.out.println(nameString);
-
-            String lastName = nameString.substring(0, nameString.indexOf(" "));
-            lastNameArrayList.add(lastName);
-            nameString = nameString.substring(nameString.indexOf(" "));
-        }
+        lastNameArrayList.add(nameString.substring(previous, nameString.length()));
     }
 }
