@@ -11,6 +11,9 @@ public class ArrayListMethods {
         program1(array);
         printArray(array);
 
+        // --------------------------------------------------------------------------- //
+        // --------------------------------------------------------------------------- //
+        
         System.out.println("\nprogram 2:");
         ArrayList<Integer> arrayList = new ArrayList<>();
 
@@ -27,7 +30,23 @@ public class ArrayListMethods {
         System.out.println(arrayList);
         program2(arrayList);
         System.out.println(arrayList);
+
+        // --------------------------------------------------------------------------- //
+        // --------------------------------------------------------------------------- //
         
+
+
+        // --------------------------------------------------------------------------- //
+        // --------------------------------------------------------------------------- //
+
+        System.out.println("\nprogram 4:");
+        String nameString = "Wonda Wilkerson Chicken Mcdoodle";
+        ArrayList<String> firstNameArrayList = new ArrayList<>();
+        ArrayList<String> lastNameArrayList = new ArrayList<>();
+        program4(nameString, firstNameArrayList, lastNameArrayList);
+
+        System.out.println(firstNameArrayList);
+        System.out.println(lastNameArrayList);
     } 
 
     public static void printArray(Integer[] inputArray) {
@@ -56,7 +75,7 @@ public class ArrayListMethods {
         int alreadyExists[] = new int [inputArray.size()];
 
         for (int index = 0; index < inputArray.size(); index++) {
-            if (alreadyExists[ inputArray.get(index) ] == -1) {
+            if (alreadyExists[inputArray.get(index)] == -1) {
                 inputArray.remove(index);
                 index--;
             }
@@ -69,7 +88,26 @@ public class ArrayListMethods {
         
     }
 
-    public static void program4(String nameString, ArrayList<String> firstNameArray, ArrayList<String> lastNameArray) {
-        
+    public static void program4(String nameString, ArrayList<String> firstNameArrayList, ArrayList<String> lastNameArrayList) {
+        int numberOfWords = 1;
+
+        //figure out how many words are there
+        for (int letterIndex = 0; letterIndex < nameString.length(); letterIndex++) {
+            if (nameString.substring(letterIndex, letterIndex + 1).isBlank()) {
+                numberOfWords = numberOfWords + 1;
+            }   
+        }
+
+        for (int letterIndex = 0; letterIndex <= numberOfWords; letterIndex++) {
+            String firstName = nameString.substring(0, nameString.indexOf(" "));
+            firstNameArrayList.add(firstName);
+            nameString = nameString.substring(nameString.indexOf(" "));
+
+            System.out.println(nameString);
+
+            String lastName = nameString.substring(0, nameString.indexOf(" "));
+            lastNameArrayList.add(lastName);
+            nameString = nameString.substring(nameString.indexOf(" "));
+        }
     }
 }
